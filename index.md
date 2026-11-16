@@ -11,6 +11,7 @@
 **알림을 위한 기기 식별자 (Firebase Cloud Messaging)**
 - 알림을 받으려고 앱은 Google의 Firebase Cloud Messaging(FCM)을 사용합니다. 이때 Firebase가 앱을 설치한 기기마다 설치 ID와 알림 토큰을 만들어 Google 서버에 보관합니다.
 - 사용자가 고른 팀과 발급한 경기에 해당하는 알림 주제(topic)가 이 토큰에 묶여 FCM에 등록됩니다. 알림을 정확히 보내기 위한 것이며 다른 목적으로 쓰지 않습니다.
+- 주제를 등록하거나 해지할 때 Firebase는 앱 버전도 함께 처리합니다.
 - 앱 운영자(개발자)의 서버는 이 토큰을 받지도, 저장하지도 않습니다. 서버는 "특정 주제에 알림을 보낸다"는 요청만 FCM에 보냅니다.
 - Google이 이 정보를 처리하는 방식은 [Firebase 개인정보 보호 및 보안](https://firebase.google.com/support/privacy)과 [Google 개인정보처리방침](https://policies.google.com/privacy)을 따릅니다.
 
@@ -58,6 +59,7 @@
 **Device identifiers for notifications (Firebase Cloud Messaging)**
 - To deliver notifications the App uses Google's Firebase Cloud Messaging (FCM). Firebase creates an installation ID and a notification token for each device and stores them on Google's servers.
 - Notification topics matching the teams you choose and the games you pick up tickets for are registered with FCM against this token. This is only used to deliver the right notifications.
+- When a topic is registered or removed, Firebase also processes the App's version.
 - The developer's server never receives or stores this token. It only asks FCM to send a notification to a topic.
 - Google processes this data under [Firebase Privacy and Security](https://firebase.google.com/support/privacy) and the [Google Privacy Policy](https://policies.google.com/privacy).
 
